@@ -1,0 +1,81 @@
+{
+  "translation": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "more": "More",
+    "logout": "Logout",
+    "error": "Error",
+    "close": "Close",
+    "edit": "Edit",
+    "send": "Send",
+    "delete": "Delete",
+    "yes": "Yes",
+    "no": "No",
+    "files": "Attachments",
+    "continue": "Continue",
+    "remove": "Remove",
+    "not_found": "Page Not Found",
+    "not_found_message": "The page you are looking for doesn't exist or another error occurred.",
+    "landing_page": "Landing Page",
+    "welcome_to_new_site": "Welcome to your new site.",
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "min_characters": "Minimum 6 characters",
+      "forgot_password": "Forgot Password",
+      "need_an_account": "Need an Account?",
+      "login_failed": "Sorry ... login failed!",
+      "user_not_found": "User not found",
+      "email_will_be_sent": "An email will be sent with instructions for re-setting your password.",
+      "email_sent": "An email has been sent with instructions for re-setting your password."
+    },
+    "register": {
+      "register": "Register",
+      "name": "Name",
+      "email": "Email",
+      "not_email": "Not a proper email.",
+      "emailErrorMessage": "Email already exists.",
+      "confirm_password": "Confirm password",
+      "already_have_account": "Already have an account?"
+    },
+    "verification": {
+      "verification": "Confirmation",
+      "re_register": "Re-register",
+      "resend": "Resend email",
+      "you_must_verify": "You must verify your email to continue.",
+      "sent_email": "We have sent an email to <span class='pink'>{{email}}</span>. Please follow the instructions to confirm your email.",
+      "if": "If <span class='pink'>{{email}}</span> is not your email, click to re-register.",
+      "check_spam": "Please check your spam folder and ensure that emails from <span class='pink'>{{email}}</span> get to your inbox. If you don't get the email within 5 minutes, click to resend.",
+      "must_verify": "You must verify your email to continue.",
+      "link_expired": "Your verify email link has expired.",
+      "click_to_resend_link": "Click below to send new email link to ",
+      "link_resent": "A new comfirmation email link has been sent."
+    },
+    "password": {
+      "reset_password": "Reset Password",
+      "leave_blank": "leave blank to retain existing password",
+      "error_message": "There was a problem, please try again.",
+      "success_message": "Your password has been successfully changed."
+    },
+    "date": {
+      "date_picker": "Date Picker",
+      "date_time_picker": "Start/End Date/Time Picker",
+      "start_date_time": "Start Date/Time",
+      "end_date_time": "End Date/Time",
+      "must_be_future": "Must be in the future",
+      "must_be_1_hour": "Must be at least 1 hour",
+      "single_date_picker": "Single Date Picker"
+    },
+    "comments": {
+      "comments": "Comments",
+      "replies": "Replies",
+      "reply": "Reply",
+      "add_comment": "Add a Comment",
+      "add_reply": "Add a Reply",
+      "comment": "Comment",
+      "add_file": "Add File",
+      "upload_file": "Upload File"
+    }
+  }
+}

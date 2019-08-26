@@ -1,0 +1,22 @@
+a {
+  text-decoration: none;
+}
+.animate-opacity {
+  -webkit-animation: opac 0.5s;
+  animation: opac 0.5s;
+}
+/*.w3-animate-opacity{-webkit-animation:opac 1.5s;animation:opac 1.5s}*/
+@-webkit-keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* @import url("https://fonts.googleapis.com/css?family=Stardos+Stencil:700&display=swap");
+
+.stencil {
+  font-family: "Stardos Stencil", cursive;
+} */

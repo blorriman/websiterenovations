@@ -1,0 +1,81 @@
+{
+  "translation": {
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "more": "Plus",
+    "logout": "Connectez - Out",
+    "error": "Erreur",
+    "close": "Fermer",
+    "edit": "Modifier",
+    "send": "Envoyer",
+    "delete": "Effacer",
+    "yes": "Qui",
+    "no": "Non",
+    "files": "Les pièces jointes",
+    "continue": "Continuer",
+    "remove": "Retirer",
+    "not_found": "Page non trouvée",
+    "not_found_message": "La page que vous recherchez n'existe pas ou une autre erreur sest produite.",
+    "landing_page": "Page d'atterrissage",
+    "welcome_to_new_site": "Bienvenue sur votre nouveau site.",
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Mot de passe",
+      "min_characters": "Minimum 6 caractères",
+      "forgot_password": "Mot de passe oublié",
+      "need_an_account": "Besoin d'un compte?",
+      "login_failed": "Désolé ... la connexion a échoué!",
+      "user_not_found": "Utilisateur non trouvé",
+      "email_will_be_sent": "Un email vous sera envoyé avec les instructions pour redéfinir votre mot de passe.",
+      "email_sent": "Un email a été envoyé avec les instructions pour réinitialiser votre mot de passe."
+    },
+    "register": {
+      "register": "Registre",
+      "name": "Nom",
+      "email": "Email",
+      "not_email": "Pas un email correct.",
+      "emailErrorMessage": "L'email existe déjà.",
+      "confirm_password": "Confirmez le mot de passe",
+      "already_have_account": "Vous avez déjà un compte?"
+    },
+    "verification": {
+      "verification": "Vérification",
+      "re_register": "Re-enregistrer",
+      "resend": "Renvoyer vérification",
+      "you_must_verify": "Vous devez vérifier votre email pour continuer.",
+      "sent_email": "Nous avons envoyé un email à<span class='pink'>{{email}}</span>. Veuillez suivre les instructions pour confirmer votre email.",
+      "if": "Si<span class='pink'>{{email}}</span> n'est pas votre adresse email, cliquez pour vous réinscrire.",
+      "check_spam": "Veuillez vérifier votre dossier de courrier indésirable et vous assurer que les courriels de<span class='pink'>{{email}}</span> Accédez à votre boîte de réception. Si vous ne recevez pas l'e-mail dans les 5 minutes, cliquez sur renvoyer.",
+      "must_verify": "Vous devez vérifier votre email pour continuer.",
+      "link_expired": "Votre lien d'e-mail de vérification a expiré.",
+      "click_to_resend_link": "Cliquez ci-dessous pour envoyer le nouveau lien de courrier électronique à ",
+      "link_resent": "Un nouveau lien d'e-mail de vérification a été envoyé."
+    },
+    "password": {
+      "reset_password": "réinitialiser le mot de passe",
+      "leave_blank": "laisser en blanc pour conserver le mot de passe existant",
+      "error_message": "Un problème est survenu, veuillez réessayer.",
+      "success_message": "Votre mot de passe a été changé avec succès."
+    },
+    "date": {
+      "date_picker": "Sélecteur de date",
+      "date_time_picker": "Sélecteur Date/Heure Début/Fin",
+      "start_date_time": "Date/Heure Début",
+      "end_date_time": "Date/Heure Fin",
+      "must_be_future": "Doit être dans le futur",
+      "must_be_1_hour": "Doit être au moins 1 heure",
+      "single_date_picker": "Sélecteur de date unique"
+    },
+    "comments": {
+      "comments": "Commentaires",
+      "replies": "Réponses",
+      "reply": "Répondre",
+      "add_comment": "Ajouter un commentaire",
+      "add_reply": "Ajouter une réponse",
+      "comment": "Commentaire",
+      "add_file": "ajouter le fichier",
+      "upload_file": "Téléverser un fichier"
+    }
+  }
+}
