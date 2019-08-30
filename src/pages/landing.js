@@ -1,5 +1,7 @@
 import React, { useContext } from "react"
+import { Link } from "gatsby"
 import Plx from "react-plx"
+import clsx from "clsx"
 import Icon from "@mdi/react"
 import { mdiAccount, mdiArrowRightCircleOutline } from "@mdi/js"
 
@@ -20,7 +22,6 @@ import { indigo, pink } from "@material-ui/core/colors"
 
 import Layout from "../components/layouts/layout"
 import SEO from "../components/seo"
-import LandingSvg from "../components/svg/landingSvg"
 import FixSvg from "../components/svg/fixSvg"
 import OldSvg from "../components/svg/oldSvg"
 import Mobile2Svg from "../components/svg/mobile2Svg"
@@ -131,7 +132,7 @@ const animateScaleBroken = [
 const animateScaleBoring = [
   {
     start: "self",
-    end: "275vh",
+    end: "200vh",
     properties: [
       {
         startValue: 0.5,
@@ -142,7 +143,7 @@ const animateScaleBoring = [
   },
   {
     start: "self",
-    end: "275vh",
+    end: "200vh",
     properties: [
       {
         startValue: 0,
@@ -202,11 +203,11 @@ const Landing = props => {
           <Typography
             variant="h2"
             align="center"
-            className={classes.title}
+            className={clsx(classes.title, "stencil")}
             gutterBottom
             color="secondary"
           >
-            We Fix Websites!
+            I Fix Websites!
           </Typography>
         </Grow>
 
@@ -233,14 +234,15 @@ const Landing = props => {
               </Typography>
               <Mobile2Svg theme={theme} />
               <center>
-                <Button
-                  variant="outlined"
-                  color="secondary"
-                  // fullWidth
-                  className={classes.button}
-                >
-                  Learn More ...
-                </Button>
+                <Link to="/oldSites">
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    className={classes.button}
+                  >
+                    Learn More ...
+                  </Button>
+                </Link>
               </center>
             </Grid>
           </Grid>
@@ -274,15 +276,18 @@ const Landing = props => {
               <Grow in={true} timeout={2000}>
                 <DataTrendsSvg theme={theme} />
               </Grow>
+
               <center>
-                <Button
-                  variant="outlined"
-                  color="secondary"
-                  // fullWidth
-                  className={classes.button}
-                >
-                  Learn More ...
-                </Button>
+                <Link to="/brokenSites">
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    // fullWidth
+                    className={classes.button}
+                  >
+                    Learn More ...
+                  </Button>
+                </Link>
               </center>
             </Grid>
           </Grid>
@@ -316,15 +321,18 @@ const Landing = props => {
               <Grow in={true} timeout={2000}>
                 <UserFriendlySvg theme={theme} />
               </Grow>
+
               <center>
-                <Button
-                  variant="outlined"
-                  color="secondary"
-                  // fullWidth
-                  className={classes.button}
-                >
-                  Learn More ...
-                </Button>
+                <Link to="/boringSites">
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    // fullWidth
+                    className={classes.button}
+                  >
+                    Learn More ...
+                  </Button>
+                </Link>
               </center>
             </Grid>
           </Grid>

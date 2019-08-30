@@ -43,14 +43,9 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     minHeight: "calc(100vh - 67px) ",
-    // background: amber[100],
-    // background: `linear-gradient(0deg, ${amber[100]} 0%, $amber[200] 35%, ${
-    //   amber[300]
-    // } 100%)`,
     background: `linear-gradient(to bottom, ${grey[100]} 0%, ${
       yellow[200]
     } 100%)`,
-    // background: "linear-gradient(to bottom, red 0%, green 100%)",
     paddingBottom: theme.spacing(15),
   },
   toolbar: theme.mixins.toolbar,
@@ -85,24 +80,25 @@ const Layout = ({ children, location }) => {
           }}
         >
           <MuiThemeProvider theme={theme}>
-            <div>
-              <CssBaseline />
-              {location.pathname !== "/" && (
-                <AppBar position="fixed" className={classes.appBar}>
-                  <Header siteTitle={data.site.siteMetadata.title} />
-                </AppBar>
-              )}
+            <CssBaseline />
+            {location && location.pathname !== "/" && (
+              <AppBar position="fixed" className={classes.appBar}>
+                <Header
+                  siteTitle={data.site.siteMetadata.title}
+                  location={location}
+                />
+              </AppBar>
+            )}
 
-              <div className={classes.root}>
-                <Grow in={true} timeout={800}>
-                  <main className={classes.content}>
-                    <div className={classes.toolbar} />
-                    {children}
-                  </main>
-                </Grow>
-              </div>
-              <Footer />
+            <div className={classes.root}>
+              <Grow in={true} timeout={800}>
+                <main className={classes.content}>
+                  <div className={classes.toolbar} />
+                  {children}
+                </main>
+              </Grow>
             </div>
+            <Footer />
           </MuiThemeProvider>
         </ThemeContext.Provider>
       )}

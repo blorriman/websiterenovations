@@ -7,6 +7,12 @@ a {
 }
 /*.w3-animate-opacity{-webkit-animation:opac 1.5s;animation:opac 1.5s}*/
 
+@import url("https://fonts.googleapis.com/css?family=Stardos+Stencil:700&display=swap");
+
+.stencil {
+  font-family: "Stardos Stencil", cursive;
+}
+
 /* flicker */
 @-webkit-keyframes opac {
   from {

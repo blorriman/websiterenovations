@@ -74,13 +74,16 @@ const myTheme = createMuiTheme({
   palette: {
     // primary: amber,
     primary: {
-      main: amber[700],
+      main: amber[500],
     },
     // secondary: red,
     secondary: deepOrange,
     background: {
-      default: amber[100]
-    }
+      default: amber[100],
+    },
+    // common: {
+    //   type: "dark",
+    // },
   },
 })
 

@@ -8,10 +8,9 @@ import Landing from "./landing"
 const theme = myTheme
 
 const IndexPage = props => {
-  const { location } = props
   return (
     <ThemeProvider theme={theme}>
-      <Landing location={location} />
+      <Landing />
     </ThemeProvider>
   )
 }
