@@ -39,7 +39,7 @@ const myDefault = createMuiTheme({
     },
     background: {
       paper: grey[100],
-      // default: amber[200],
+      default: "#fafafa",
     },
   },
   typography: {
@@ -72,8 +72,15 @@ const myDefault = createMuiTheme({
 const myTheme = createMuiTheme({
   ...myDefault,
   palette: {
-    primary: purple,
-    secondary: lightBlue,
+    // primary: amber,
+    primary: {
+      main: amber[700],
+    },
+    // secondary: red,
+    secondary: deepOrange,
+    background: {
+      default: amber[100]
+    }
   },
 })
 
