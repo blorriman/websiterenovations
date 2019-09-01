@@ -7,6 +7,7 @@ import {
   Container,
   Divider,
   Grid,
+  Grow,
   makeStyles,
   Typography,
 } from "@material-ui/core"
@@ -38,51 +39,53 @@ const BrokenSites = () => {
   return (
     <>
       <SEO title="OldSites" />
-      <Container component="main" className={classes.main} maxWidth="md">
-        <Grid container justify="center" alignItems="center" spacing={4}>
-          <Grid item xs={8} sm={4}>
-            <NotFoundSvg theme={theme} />
+      <Grow in={true} timeout={800}>
+        <Container component="main" className={classes.main} maxWidth="md">
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={8} sm={4}>
+              <NotFoundSvg theme={theme} />
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <p className={classes.paragraph}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
+                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
+                fugit dicta commodi, tempora fugiat?
+              </p>
+              <p className={classes.paragraph}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
+                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
+                fugit dicta commodi, tempora fugiat?
+              </p>
+            </Grid>
           </Grid>
-          <Grid item xs={8} sm={8}>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
-          </Grid>
-        </Grid>
 
-        <Divider className={classes.divider} />
+          <Divider className={classes.divider} />
 
-        <Grid container justify="center" alignItems="center" spacing={4}>
-          <Grid item xs={8} sm={6}>
-            <DataTrendsSvg theme={theme} />
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={8} sm={6}>
+              <DataTrendsSvg theme={theme} />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container justify="center" alignItems="center" spacing={4}>
-          <Grid item xs={12} sm={10}>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={12} sm={10}>
+              <p className={classes.paragraph}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
+                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
+                fugit dicta commodi, tempora fugiat?
+              </p>
+              <p className={classes.paragraph}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
+                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
+                fugit dicta commodi, tempora fugiat?
+              </p>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Grow>
     </>
   )
 }
