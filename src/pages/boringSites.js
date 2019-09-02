@@ -9,6 +9,7 @@ import {
   Divider,
   Grid,
   Grow,
+  Hidden,
   makeStyles,
   Typography,
 } from "@material-ui/core"
@@ -124,12 +125,20 @@ const BoringSites = props => {
                 site visits were abandoned if a page took longer than 3 seconds
                 to load.”
               </Typography>
-              <Plx className="rocket" parallaxData={blastOff}>
+              <Hidden xsDown>
+                <Plx className="rocket" parallaxData={blastOff}>
+                  <Img
+                    style={{ width: "50%", margin: "0 auto" }}
+                    fluid={props.data.rocketship.childImageSharp.fluid}
+                  />
+                </Plx>
+              </Hidden>
+              <Hidden smUp>
                 <Img
                   style={{ width: "50%", margin: "0 auto" }}
                   fluid={props.data.rocketship.childImageSharp.fluid}
                 />
-              </Plx>
+              </Hidden>
             </Grid>
           </Grid>
         </Container>
