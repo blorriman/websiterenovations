@@ -1,7 +1,8 @@
 /* eslint-disable */
 import React, { useContext } from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import Plx from "react-plx"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 import {
   Box,
   Container,
@@ -32,13 +33,38 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const BoringSites = () => {
+const blastOff = [
+  {
+    start: "98vh",
+    // start: "self",
+    duration: 400,
+    properties: [
+      {
+        startValue: 0,
+        endValue: 500,
+        property: "translateX",
+      },
+      {
+        startValue: 0,
+        endValue: -800,
+        property: "translateY",
+      },
+      {
+        startValue: 1,
+        endValue: 0,
+        property: "opacity",
+      },
+    ],
+  },
+]
+
+const BoringSites = props => {
   const themeInfo = useContext(ThemeContext)
   const theme = themeInfo.globalTheme
   const classes = useStyles()
   return (
     <>
-      <SEO title="OldSites" />
+      <SEO title="Boring Sites" />
       <Grow in={true} timeout={800}>
         <Container component="main" className={classes.main} maxWidth="md">
           <Grid container justify="center" alignItems="center" spacing={4}>
@@ -46,18 +72,23 @@ const BoringSites = () => {
               <BoringSvg theme={theme} />
             </Grid>
             <Grid item xs={12} sm={8}>
-              <p className={classes.paragraph}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-                fugit dicta commodi, tempora fugiat?
-              </p>
-              <p className={classes.paragraph}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-                fugit dicta commodi, tempora fugiat?
-              </p>
+              <Typography variant="h6" align="center">
+                BWS (Boring Website Syndrome)
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                <p>
+                  There’s a time and place for boring (like attending a physics
+                  lecture). But one place where boring doesn’t belong is your
+                  website.
+                </p>
+                <ol>
+                  <li>Your home page has no focal point.</li>
+                  <li>Text runs on forever.</li>
+                  <li>Your site hasn’t been updated in months (or years).</li>
+                  <li>There’s no opportunity for interaction.</li>
+                  <li>... etc.</li>
+                </ol>
+              </Typography>
             </Grid>
           </Grid>
 
@@ -70,18 +101,35 @@ const BoringSites = () => {
           </Grid>
           <Grid container justify="center" alignItems="center" spacing={4}>
             <Grid item xs={12} sm={10}>
-              <p className={classes.paragraph}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-                fugit dicta commodi, tempora fugiat?
-              </p>
-              <p className={classes.paragraph}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-                ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-                fugit dicta commodi, tempora fugiat?
-              </p>
+              <Typography variant="body1" gutterBottom>
+                <p>
+                  Today, users are extremely demanding when it comes to website
+                  design and functionality ... as they should be. Landing on a
+                  so-so website is just plain disappointing.
+                </p>
+                <p>
+                  Visitors are reading less and expecting more photos and other
+                  visual components. Use high-quality images that enhance the
+                  text, but don’t overcrowd your pages.
+                </p>
+                <p></p>
+              </Typography>
+              <Typography variant="h6" align="center" gutterBottom>
+                Make your site lighting fast!!!
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Slow loading websites just don’t cut it today. If your website
+                doesn’t load in 3 seconds or less, you’re going to lose
+                visitors. According to a study done by Google, “53% of mobile
+                site visits were abandoned if a page took longer than 3 seconds
+                to load.”
+              </Typography>
+              <Plx className="rocket" parallaxData={blastOff}>
+                <Img
+                  style={{ width: "50%", margin: "0 auto" }}
+                  fluid={props.data.rocketship.childImageSharp.fluid}
+                />
+              </Plx>
             </Grid>
           </Grid>
         </Container>
@@ -91,3 +139,15 @@ const BoringSites = () => {
 }
 
 export default BoringSites
+
+export const query = graphql`
+  query {
+    rocketship: file(relativePath: { eq: "rocketship.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

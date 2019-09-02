@@ -81,13 +81,14 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     backgroundColor: grey[200],
   },
-  navItem: {
-    color: grey[700],
-    textDecoration: "none",
-    // "&:hover": {
-    //   backgroundColor: grey[300],
-    // },
-  },
+  // navItem: {
+  //   // color: grey[700],
+  //   // textDecoration: "none",
+  //   "&:hover": {
+  //     backgroundColor: grey[300],
+  //     // textDecoration: "underline",
+  //   },
+  // },
 }))
 
 export const ThemeContext = createContext()
@@ -160,25 +161,25 @@ const Layout = ({ children, location }) => {
                     </div>
                     <Divider />
                     <List component="nav">
-                      <Link className={classes.navItem} to="/oldSites">
+                      <Link to="/oldSites">
                         <ListItem button divider onClick={handleDrawerClose}>
                           <ListItemText>Old Sites</ListItemText>
                         </ListItem>
                       </Link>
 
-                      <Link className={classes.navItem} to="/brokenSites">
+                      <Link to="/brokenSites">
                         <ListItem button divider onClick={handleDrawerClose}>
                           <ListItemText>Broken Sites</ListItemText>
                         </ListItem>
                       </Link>
 
-                      <Link className={classes.navItem} to="/boringSites">
+                      <Link to="/boringSites">
                         <ListItem button divider onClick={handleDrawerClose}>
                           <ListItemText>Boring Sites</ListItemText>
                         </ListItem>
                       </Link>
 
-                      <Link className={classes.navItem} to="/about">
+                      <Link to="/about">
                         <ListItem button divider onClick={handleDrawerClose}>
                           <ListItemText>About</ListItemText>
                         </ListItem>
