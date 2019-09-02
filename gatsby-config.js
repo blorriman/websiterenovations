@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Website Renovations`,
+        short_name: `Web Renos`,
         start_url: `/`,
         background_color: `#FFC107`,
         theme_color: `#FFC107`,
