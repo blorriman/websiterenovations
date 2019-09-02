@@ -50,7 +50,7 @@ const About = props => {
 
           <Grid container justify="center" alignItems="center" spacing={4}>
             <Grid item xs={12} sm={10}>
-              <Typography variant="body1" gutterBottom>
+              <Typography component={"span"} gutterBottom>
                 <p>
                   If your website is over 2 years old, most likely it’s far
                   behind in terms of looks and functionality. It probably has
@@ -73,7 +73,7 @@ const About = props => {
               <Typography variant="h6" align="center" gutterBottom>
                 Static Sites
               </Typography>
-              <Typography variant="body1" gutterBottom>
+              <Typography component={"span"} gutterBottom>
                 <p>
                   Let me start by explaining what static sites are. First, the
                   term "static" does not mean that your site has no dynamic
@@ -134,7 +134,7 @@ const About = props => {
               <Typography variant="h6" align="center" gutterBottom>
                 WordPress
               </Typography>
-              <Typography variant="body1" gutterBottom>
+              <Typography component={"span"} gutterBottom>
                 <p>
                   WordPress holds the largest CMS market share by far, and
                   currently accounts for over a quarter of all websites ...
@@ -158,35 +158,37 @@ const About = props => {
               />
             </Grid>
             <Grid item xs={12} sm={8}>
-              <p>
-                I use the{" "}
-                <a
-                  href="https://www.elegantthemes.com/gallery/divi/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={classes.link}
-                >
-                  Divi
-                </a>{" "}
-                theme exclusively in all my WordPress development. Divi is one
-                of the most popular WordPress themes in the world.
-              </p>
-              <p className={classes.paragraph}>
-                Divi includes lots of{" "}
-                <a
-                  href="https://www.elegantthemes.com/layouts/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={classes.link}
-                >
-                  premade layouts
-                </a>{" "}
-                to help you get started. Layouts include blogs, shops,
-                homepages, landing pages, splash page, about pages, maintenance,
-                coming soon, project, portfolio, contact, case studies, creative
-                agency, product features, and more. Using Divi theme layouts can
-                save a lot of time (money).
-              </p>
+              <Typography component={"span"} gutterBottom>
+                <p>
+                  I use the{" "}
+                  <a
+                    href="https://www.elegantthemes.com/gallery/divi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={classes.link}
+                  >
+                    Divi
+                  </a>{" "}
+                  theme exclusively in all my WordPress development. Divi is one
+                  of the most popular WordPress themes in the world.
+                </p>
+                <p className={classes.paragraph}>
+                  Divi includes lots of{" "}
+                  <a
+                    href="https://www.elegantthemes.com/layouts/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={classes.link}
+                  >
+                    premade layouts
+                  </a>{" "}
+                  to help you get started. Layouts include blogs, shops,
+                  homepages, landing pages, splash page, about pages,
+                  maintenance, coming soon, project, portfolio, contact, case
+                  studies, creative agency, product features, and more. Using
+                  Divi theme layouts can save a lot of time (money).
+                </p>
+              </Typography>
             </Grid>
             <Grid item xs={12} sm={10}>
               <Typography variant="subtitle1" align="center" gutterBottom>
@@ -217,7 +219,7 @@ const About = props => {
               />
             </Grid>
             <Grid item xs={12} sm={10}>
-              <Typography variant="body1" gutterBottom>
+              <Typography component={"span"} gutterBottom>
                 <p>
                   My name is Bob Lorriman, I'm a semi-retired web developer. My
                   last main project has been{" "}
@@ -246,12 +248,11 @@ const About = props => {
                   If you like the idea of working with a non-chaotic, organized
                   and results oriented developer ... let's talk!
                 </p>
-                <Img
-                  style={{ width: "20%" }}
-                  fluid={props.data.signature.childImageSharp.fluid}
-                />
-                <p>Bob Lorriman</p>
               </Typography>
+              <Img
+                style={{ width: "20%" }}
+                fluid={props.data.signature.childImageSharp.fluid}
+              />
             </Grid>
           </Grid>
         </Container>

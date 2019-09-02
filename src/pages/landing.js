@@ -3,9 +3,8 @@ import { Link } from "gatsby"
 import Plx from "react-plx"
 import clsx from "clsx"
 import Icon from "@mdi/react"
-import { mdiAccount, mdiArrowRightCircleOutline } from "@mdi/js"
+import { mdiArrowRightCircleOutline } from "@mdi/js"
 
-import i18n from "../components/lng/i18"
 import {
   Button,
   Container,
@@ -15,12 +14,8 @@ import {
   Hidden,
   makeStyles,
   Typography,
-  useTheme,
-  Zoom,
 } from "@material-ui/core"
-import { indigo, pink } from "@material-ui/core/colors"
 
-import Layout from "../components/layouts/layout"
 import SEO from "../components/seo"
 import FixSvg from "../components/svg/fixSvg"
 import OldSvg from "../components/svg/oldSvg"
@@ -30,12 +25,6 @@ import NotFoundSvg from "../components/svg/notFoundSvg"
 import BoringSvg from "../components/svg/boringSvg"
 import UserFriendlySvg from "../components/svg/userFriendlySvg"
 
-import {
-  myTheme,
-  greenTheme,
-  amberTheme,
-  redTheme,
-} from "../components/utils/myThemes"
 import { ThemeContext } from "../components/layouts/layout"
 
 const useStyles = makeStyles(theme => ({
@@ -67,15 +56,8 @@ const useStyles = makeStyles(theme => ({
   lessToolbar: {
     marginTop: -56,
   },
-  // arrowLeft: {
-  //   color: theme.palette.secondary.main,
-  //   [theme.breakpoints.down("xs")]: {
-  //     transform: "rotate(90deg)",
-  //   },
-  // },
   button: {
     margin: theme.spacing(1),
-    // backgroundColor: pink[500],
   },
 }))
 
@@ -157,13 +139,7 @@ const animateScaleBoring = [
 const Landing = props => {
   const themeInfo = useContext(ThemeContext)
   const theme = themeInfo.globalTheme
-  let lng
-  if (themeInfo) {
-    lng = themeInfo.lang
-  }
   const classes = useStyles()
-  const primary = theme.palette.primary.main
-  const secondary = theme.palette.secondary.main
 
   const directionArrow = (
     <>

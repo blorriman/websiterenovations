@@ -5,16 +5,11 @@ import { Box, makeStyles, Typography } from "@material-ui/core"
 
 import { amber, grey } from "@material-ui/core/colors"
 
-const drawerWidth = 240
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: amber[300],
     padding: theme.spacing(3),
-    // [theme.breakpoints.up("sm")]: {
-    //   paddingLeft: drawerWidth,
-    // },
   },
   logo: {
     maxHeight: 30,

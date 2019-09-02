@@ -1,14 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import clsx from "clsx"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import {
-  Drawer,
-  IconButton,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from "@material-ui/core/"
+import { IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core/"
 import Icon from "@mdi/react"
 import { mdiMenu } from "@mdi/js"
 import "./global.css"
@@ -59,9 +53,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Header = props => {
-  const { location, theme } = props
+  const { theme } = props
   const classes = useStyles()
-  const { handleDrawerOpen, handleDrawerClose } = props
+  const { handleDrawerOpen } = props
   const data = useStaticQuery(graphql`
     query {
       site {

@@ -1,6 +1,5 @@
 import React, { useState, createContext } from "react"
 import PropTypes from "prop-types"
-import clsx from "clsx"
 import { Link, StaticQuery, graphql } from "gatsby"
 
 import {
@@ -9,20 +8,15 @@ import {
   CssBaseline,
   Divider,
   Drawer,
-  Fade,
   Grow,
-  Hidden,
   IconButton,
   List,
   ListItem,
   ListItemText,
   makeStyles,
-  Slide,
   Typography,
-  useTheme,
-  Zoom,
 } from "@material-ui/core/"
-import { amber, grey, yellow } from "@material-ui/core/colors"
+import { grey, yellow } from "@material-ui/core/colors"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 
 // THEME
