@@ -49,7 +49,7 @@ const About = props => {
           </Grid>
 
           <Grid container justify="center" alignItems="center" spacing={4}>
-            <Grid item xs={8} sm={10}>
+            <Grid item xs={12} sm={10}>
               <Typography variant="body1" gutterBottom>
                 <p>
                   If your website is over 2 years old, most likely it’s far
@@ -135,10 +135,66 @@ const About = props => {
                 WordPress
               </Typography>
               <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                aut numquam excepturi beatae aliquid sed perspiciatis nam, a
-                molestias nemo veritatis assumenda. Doloremque, iste aperiam!
-                Adipisci facilis corrupti modi doloremque!
+                <p>
+                  WordPress holds the largest CMS market share by far, and
+                  currently accounts for over a quarter of all websites ...
+                  possibly, your current website is a WordPress site.
+                </p>
+                <p>
+                  If you need to constantly add or edit content on your site ...
+                  or maybe you blog on your site, then Wordpress is probably the
+                  best choice for you. It's easy to use, and with the Divi
+                  theme, adding and editing content is now easier than ever.
+                </p>
+              </Typography>
+            </Grid>
+          </Grid>
+
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={8} sm={4}>
+              <Img
+                style={{ width: "50%", margin: "0 auto" }}
+                fluid={props.data.divi.childImageSharp.fluid}
+              />
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <p>
+                I use the{" "}
+                <a
+                  href="https://www.elegantthemes.com/gallery/divi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                >
+                  Divi
+                </a>{" "}
+                theme exclusively in all my WordPress development. Divi is one
+                of the most popular WordPress themes in the world.
+              </p>
+              <p className={classes.paragraph}>
+                Divi includes lots of{" "}
+                <a
+                  href="https://www.elegantthemes.com/layouts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                >
+                  premade layouts
+                </a>{" "}
+                to help you get started. Layouts include blogs, shops,
+                homepages, landing pages, splash page, about pages, maintenance,
+                coming soon, project, portfolio, contact, case studies, creative
+                agency, product features, and more. Using Divi theme layouts can
+                save a lot of time (money).
+              </p>
+            </Grid>
+            <Grid item xs={12} sm={10}>
+              <Typography variant="subtitle1" align="center" gutterBottom>
+                <em>
+                  If you're not sure whether a staic site or a WordPress site is
+                  best for you, I can go over both options in detail with you
+                  and make a recommendation.
+                </em>
               </Typography>
             </Grid>
           </Grid>
@@ -160,7 +216,7 @@ const About = props => {
                 fluid={props.data.avatar.childImageSharp.fluid}
               />
             </Grid>
-            <Grid item xs={8} sm={10}>
+            <Grid item xs={12} sm={10}>
               <Typography variant="body1" gutterBottom>
                 <p>
                   My name is Bob Lorriman, I'm a semi-retired web developer. My
