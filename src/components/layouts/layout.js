@@ -1,17 +1,18 @@
 import React, { useState, createContext } from "react"
-import { setGlobal, useGlobal } from "reactn"
 import PropTypes from "prop-types"
 import clsx from "clsx"
-import { StaticQuery, graphql } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 
 import {
   AppBar,
+  Container,
   CssBaseline,
   Divider,
   Drawer,
   Fade,
   Grow,
   Hidden,
+  IconButton,
   List,
   ListItem,
   ListItemText,
@@ -21,14 +22,16 @@ import {
   useTheme,
   Zoom,
 } from "@material-ui/core/"
+import { amber, grey, yellow } from "@material-ui/core/colors"
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 
 // THEME
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider"
-import { myTheme, greenTheme, amberTheme, redTheme } from "../utils/myThemes"
+import { myTheme } from "../utils/myThemes"
 
 import Header from "./header"
 import Footer from "./footer"
-import DrawerCode from "./drawer"
+import ContactForm from "../contactForm"
 
 import "./global.css"
 
@@ -45,97 +48,65 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    // minHeight: "100vh",
-    // minHeight: `calc(100vh - ${theme.mixins.toolbar})`,
     minHeight: "calc(100vh - 67px) ",
-    background: theme.palette.background.default,
+    background: `linear-gradient(to bottom, ${grey[100]} 0%, ${
+      yellow[200]
+    } 100%)`,
     paddingBottom: theme.spacing(15),
   },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  appBar: {
-    marginLeft: drawerWidth,
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
   toolbar: theme.mixins.toolbar,
-  drawerPaper: {
-    width: drawerWidth,
+  appBar: {
+    boxShadow: theme.shadows[1],
   },
   content: {
     flexGrow: 1,
-    // padding: theme.spacing(3),
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: `${drawerWidth}px`,
-    },
   },
+  divider: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+    padding: theme.spacing(0.5),
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: "flex-end",
+  },
+  drawerPaper: {
+    width: drawerWidth,
+    backgroundColor: grey[200],
+  },
+  // navItem: {
+  //   // color: grey[700],
+  //   // textDecoration: "none",
+  //   "&:hover": {
+  //     backgroundColor: grey[300],
+  //     // textDecoration: "underline",
+  //   },
+  // },
 }))
 
 export const ThemeContext = createContext()
 
 const Layout = ({ children, location }) => {
   const classes = useStyles()
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [value, setValue] = useState("en")
-  const [globalTheme, setGlobalTheme] = useState("myTheme")
+  const theme = myTheme
+  const lang = "en"
 
-  function handleDrawerToggle() {
-    setMobileOpen(!mobileOpen)
-  }
+  const [open, setOpen] = useState(false)
 
-  // theme changer
-  function handleThemeChange(event) {
-    setGlobalTheme(event.target.value)
-  }
-  let theme
-  switch (globalTheme) {
-    case "greenTheme":
-      theme = greenTheme
-      break
-    case "amberTheme":
-      theme = amberTheme
-      break
-    case "redTheme":
-      theme = redTheme
-      break
-
-    default:
-      theme = myTheme
-      break
+  function handleDrawerOpen() {
+    setOpen(true)
   }
 
-  function handleThemeChangeMobile(event) {
-    handleThemeChange(event)
-    handleDrawerToggle()
+  function handleDrawerClose() {
+    setOpen(false)
   }
-
-  // language changer
-  function handleChange(event) {
-    setValue(event.target.value)
-  }
-  // for mobile
-  function handleChangeMobile(event) {
-    setValue(event.target.value)
-    handleDrawerToggle()
-  }
-  const lang = value
 
   return (
     <StaticQuery
@@ -156,22 +127,26 @@ const Layout = ({ children, location }) => {
           }}
         >
           <MuiThemeProvider theme={theme}>
-            <div>
-              <CssBaseline />
+            <CssBaseline />
+            {location && location.pathname !== "/" && (
               <AppBar position="fixed" className={classes.appBar}>
                 <Header
                   siteTitle={data.site.siteMetadata.title}
-                  handleDrawerToggle={handleDrawerToggle}
+                  location={location}
+                  theme={theme}
+                  handleDrawerOpen={handleDrawerOpen}
+                  handleDrawerClose={handleDrawerClose}
                 />
               </AppBar>
+            )}
 
-              <nav className={classes.drawer} aria-label="mailbox folders">
-                <Hidden smUp implementation="css">
+            <div className={classes.root}>
+              <Grow in={true} timeout={800}>
+                <main className={classes.content}>
                   <Drawer
                     variant="temporary"
-                    anchor={theme.direction === "rtl" ? "right" : "left"}
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
+                    open={open}
+                    onClose={handleDrawerOpen}
                     classes={{
                       paper: classes.drawerPaper,
                     }}
@@ -179,44 +154,60 @@ const Layout = ({ children, location }) => {
                       keepMounted: true, // Better open performance on mobile.
                     }}
                   >
-                    <DrawerCode
-                      lang={lang}
-                      handleChange={handleChangeMobile}
-                      globalTheme={globalTheme}
-                      handleThemeChange={handleThemeChangeMobile}
-                      handleDrawerToggle={handleDrawerToggle}
-                    />
-                  </Drawer>
-                </Hidden>
+                    <div className={classes.drawerHeader}>
+                      <IconButton onClick={handleDrawerClose}>
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </div>
+                    <Divider />
+                    <List component="nav">
+                      <Link to="/oldSites">
+                        <ListItem button divider onClick={handleDrawerClose}>
+                          <ListItemText>Old Sites</ListItemText>
+                        </ListItem>
+                      </Link>
 
-                <Hidden xsDown implementation="css">
-                  <Drawer
-                    classes={{
-                      paper: classes.drawerPaper,
-                    }}
-                    variant="permanent"
-                    open
+                      <Link to="/brokenSites">
+                        <ListItem button divider onClick={handleDrawerClose}>
+                          <ListItemText>Broken Sites</ListItemText>
+                        </ListItem>
+                      </Link>
+
+                      <Link to="/boringSites">
+                        <ListItem button divider onClick={handleDrawerClose}>
+                          <ListItemText>Boring Sites</ListItemText>
+                        </ListItem>
+                      </Link>
+
+                      <Link to="/about">
+                        <ListItem button divider onClick={handleDrawerClose}>
+                          <ListItemText>About</ListItemText>
+                        </ListItem>
+                      </Link>
+                    </List>
+                  </Drawer>
+                  <div className={classes.toolbar} />
+                  {children}
+
+                  <Container
+                    component="main"
+                    className={classes.main}
+                    maxWidth="md"
                   >
-                    <DrawerCode
-                      handleChange={handleChange}
-                      value={value}
-                      globalTheme={globalTheme}
-                      handleThemeChange={handleThemeChange}
+                    <Divider
+                      className={classes.divider}
+                      style={{ backgroundColor: theme.palette.primary.main }}
                     />
-                  </Drawer>
-                </Hidden>
-              </nav>
 
-              <div className={classes.root}>
-                <Grow in={true} timeout={800}>
-                  <main className={classes.content}>
-                    <div className={classes.toolbar} />
-                    {children}
-                  </main>
-                </Grow>
-              </div>
-              <Footer />
+                    <Typography variant="h5" align="center" gutterBottom>
+                      Contact Me
+                    </Typography>
+                    <ContactForm />
+                  </Container>
+                </main>
+              </Grow>
             </div>
+            <Footer />
           </MuiThemeProvider>
         </ThemeContext.Provider>
       )}
