@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
   },
   divider: {
     marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(10),
+    marginBottom: theme.spacing(5),
     padding: theme.spacing(0.5),
     backgroundColor: theme.palette.primary.main,
   },
@@ -78,7 +78,7 @@ const animateScaleOld = [
     end: "30%",
     properties: [
       {
-        startValue: 0,
+        startValue: 0.5,
         endValue: 1,
         property: "opacity",
       },
@@ -103,7 +103,7 @@ const animateScaleBroken = [
     end: "60%",
     properties: [
       {
-        startValue: 0,
+        startValue: 0.5,
         endValue: 1,
         property: "opacity",
       },
@@ -128,7 +128,7 @@ const animateScaleBoring = [
     end: "90%",
     properties: [
       {
-        startValue: 0,
+        startValue: 0.5,
         endValue: 1,
         property: "opacity",
       },
