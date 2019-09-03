@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Website Renovations
     `,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `I fix old, broken and boring websites and make them mobile friendly, SEO friendly and user friendly. Either static sites or Wordpress sites`,
     author: `Bob Lorriman`,
   },
   plugins: [
