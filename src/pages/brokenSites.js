@@ -7,6 +7,7 @@ import {
   Container,
   Divider,
   Grid,
+  Grow,
   makeStyles,
   Typography,
 } from "@material-ui/core"
@@ -38,51 +39,67 @@ const BrokenSites = () => {
   return (
     <>
       <SEO title="OldSites" />
-      <Container component="main" className={classes.main} maxWidth="md">
-        <Grid container justify="center" alignItems="center" spacing={4}>
-          <Grid item xs={8} sm={4}>
-            <NotFoundSvg theme={theme} />
+      <Grow in={true} timeout={800}>
+        <Container component="main" className={classes.main} maxWidth="md">
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={8} sm={4}>
+              <NotFoundSvg theme={theme} />
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <Typography variant="h6" align="center">
+                A broken site is BAD ... really BAD.
+              </Typography>
+              <Typography variant="body1">
+                <ol>
+                  <li>It’s a source of frustration for the user.</li>
+                  <li>
+                    It shows that you don’t do regular housekeeping (care about
+                    your site).
+                  </li>
+                  <li>It can harm your credibility.</li>
+                  <li>It can hurt your SEO and page rankings.</li>
+                  <li>... etc.</li>
+                </ol>
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={8} sm={8}>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
-          </Grid>
-        </Grid>
 
-        <Divider className={classes.divider} />
+          <Divider className={classes.divider} />
 
-        <Grid container justify="center" alignItems="center" spacing={4}>
-          <Grid item xs={8} sm={6}>
-            <DataTrendsSvg theme={theme} />
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={8} sm={6}>
+              <DataTrendsSvg theme={theme} />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container justify="center" alignItems="center" spacing={4}>
-          <Grid item xs={12} sm={10}>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
-            <p className={classes.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae doloribus delectus eligendi ipsa voluptates impedit
-              ipsam enim ut explicabo, recusandae nam iusto atque eum nobis
-              fugit dicta commodi, tempora fugiat?
-            </p>
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={12} sm={10}>
+              <Typography variant="h6" align="center">
+                Search Engine Optimization (SEO Friendly)
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                <p>
+                  Full on SEO optimization can be very expensive. Expect to pay
+                  north of $1,000/month ... and that still can't guarantee that
+                  you will be on top ... or even on the first page.
+                </p>
+              </Typography>
+              <Typography variant="h6" align="center">
+                but ...
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                <p>
+                  A clean, well organized (and mobile friendly) site along with
+                  meta page descriptions utilizing keywords in your content will
+                  go a long way ... without blowing your budget :)
+                </p>
+              </Typography>
+              <Typography variant="h6" align="center">
+                ... and I can help you with that.
+              </Typography>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Grow>
     </>
   )
 }

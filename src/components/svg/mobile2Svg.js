@@ -1,23 +1,10 @@
 import React from "react"
-import {
-  amber,
-  cyan,
-  grey,
-  indigo,
-  lightBlue,
-  lightGreen,
-  orange,
-  pink,
-  purple,
-  red,
-  yellow,
-} from "@material-ui/core/colors"
+import { grey, lightBlue, lightGreen } from "@material-ui/core/colors"
 
 const Mobile2Svg = props => {
   const { theme } = props
   const primary = theme.palette.primary.main
   const secondary = lightGreen[500]
-  // const secondary = theme.palette.secondary.main
   return (
     <div style={{ paddingTop: theme.spacing(3) }}>
       <svg

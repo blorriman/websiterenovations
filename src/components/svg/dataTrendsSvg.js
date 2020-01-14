@@ -6,17 +6,13 @@ import {
   lightBlue,
   lightGreen,
   orange,
-  pink,
   purple,
   red,
-  yellow,
 } from "@material-ui/core/colors"
 
 const DataTrendsSvg = props => {
   const { theme } = props
   const primary = lightGreen[500]
-  // const primary = theme.palette.primary.main
-  const secondary = theme.palette.secondary.main
   return (
     <div style={{ paddingTop: theme.spacing(3) }}>
       <svg

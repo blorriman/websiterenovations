@@ -1,21 +1,11 @@
 import React from "react"
 import {
-  amber,
-  cyan,
-  indigo,
-  lightBlue,
-  lightGreen,
-  orange,
-  pink,
-  purple,
   red,
-  yellow,
 } from "@material-ui/core/colors"
 
 const FixSvg = props => {
   const { theme } = props
   const primary = theme.palette.primary.main
-  const secondary = theme.palette.secondary.main
   return <div style={{ paddingTop: theme.spacing(3) }}>
     <svg id="e7dedc5b-fca6-4313-b5a0-e6297481e8ae" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" 
     width="75%" 

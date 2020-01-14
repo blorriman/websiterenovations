@@ -9,10 +9,9 @@ import "./global.css"
 
 const useStyles = makeStyles(theme => ({
   header: {
-    paddingTop: theme.spacing(0.025),
     paddingBottom: theme.spacing(0.25),
     margin: 0,
-    backgroundColor: theme.palette.primary.main,
+    // backgroundColor: theme.palette.primary.main,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -35,6 +34,9 @@ const useStyles = makeStyles(theme => ({
     margin: 0,
     marginLeft: theme.spacing(2),
     paddingLeft: 0,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   navItem: {
     color: theme.palette.secondary.dark,
@@ -51,9 +53,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Header = props => {
-  console.log("header location ", props.location)
+  const { theme } = props
   const classes = useStyles()
-  const { handleDrawerToggle } = props
+  const { handleDrawerOpen } = props
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -68,13 +70,18 @@ const Header = props => {
     <header className={classes.header}>
       <Toolbar>
         <IconButton
-          color="inherit"
+          color="secondary"
           aria-label="open drawer"
           edge="start"
-          onClick={handleDrawerToggle}
+          onClick={handleDrawerOpen}
           className={classes.menuButton}
         >
-          <Icon path={mdiMenu} title="menu" size={1} color="white" />
+          <Icon
+            path={mdiMenu}
+            title="menu"
+            size={1}
+            color={theme.palette.secondary.main}
+          />
         </IconButton>
         <Typography component="h1" color="secondary" variant="h5" noWrap>
           <Link className={clsx(classes.title, "stencil")} to="/">
@@ -109,6 +116,15 @@ const Header = props => {
                 to="/boringSites"
               >
                 Boring Sites
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={classes.navItem}
+                activeClassName={classes.activeNavItem}
+                to="/about"
+              >
+                About
               </Link>
             </li>
           </ul>

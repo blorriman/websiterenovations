@@ -2,8 +2,6 @@ import React from "react"
 import { Container, makeStyles, Typography } from "@material-ui/core"
 import notFoundSvg from "../images/404.svg"
 
-import Layout from "../components/layouts/layout"
-
 const useStyles = makeStyles(theme => ({
   main: {
     marginTop: theme.spacing(2),

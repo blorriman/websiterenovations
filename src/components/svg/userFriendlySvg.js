@@ -1,22 +1,13 @@
 import React from "react"
 import {
-  amber,
-  cyan,
   green,
-  indigo,
-  lightBlue,
-  lightGreen,
-  orange,
   pink,
   purple,
-  red,
-  yellow,
 } from "@material-ui/core/colors"
 
 const UserFriendlySvg = props => {
   const { theme } = props
   const primary = theme.palette.primary.main
-  const secondary = theme.palette.secondary.main
   return <div style={{ paddingTop: theme.spacing(3) }}>
     <svg id="4ef1610a-9e03-48a5-8dcf-c01d7d13df94" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" 
     width="100%" 

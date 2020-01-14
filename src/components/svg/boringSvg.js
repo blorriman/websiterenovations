@@ -1,11 +1,8 @@
 import React from "react"
-import {pink} from "@material-ui/core/colors"
 
 const BoringSvg = props => {
   const { theme } = props
   const primary = theme.palette.grey[500]
-  // const primary = theme.palette.primary.main
-  const secondary = theme.palette.secondary.main
   return <div style={{ paddingTop: theme.spacing(3) }}>
     <svg id="b7755403-659e-443e-9cc8-ceaced986de6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" 
     width="100%" 

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Website Renovations
     `,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `I fix old, broken and boring websites and make them mobile friendly, SEO friendly and user friendly. Either static sites or Wordpress sites`,
     author: `Bob Lorriman`,
   },
   plugins: [
@@ -28,13 +28,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Website Renovations`,
+        short_name: `Web Renos`,
         start_url: `/`,
-        background_color: `#BDBDBD`,
-        theme_color: `#BDBDBD`,
+        background_color: `#FFC107`,
+        theme_color: `#FFC107`,
         display: `minimal-ui`,
-        icon: `src/images/BL-grey.png`, // This path is relative to the root of the site.
+        icon: `src/images/websiteRenos.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
