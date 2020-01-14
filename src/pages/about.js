@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from "react"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
