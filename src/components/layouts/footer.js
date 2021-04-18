@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import { Box, makeStyles, Typography } from "@material-ui/core"
 
-import { amber, grey } from "@material-ui/core/colors"
+import { indigo, grey } from "@material-ui/core/colors"
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: amber[300],
+    backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(3),
   },
   logo: {
@@ -37,7 +37,7 @@ const Footer = props => {
           fontSize={12}
           textAlign="center"
           m={1}
-          color={grey[700]}
+          color={grey[100]}
         >
           created by {data.site.siteMetadata.author} ©{" "}
           {new Date().getFullYear()}

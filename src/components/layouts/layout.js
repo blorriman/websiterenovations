@@ -4,6 +4,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 
 import {
   AppBar,
+  Button,
   Container,
   CssBaseline,
   Divider,
@@ -16,7 +17,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core/"
-import { grey, yellow } from "@material-ui/core/colors"
+import { blue, indigo, grey, yellow } from "@material-ui/core/colors"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 
 // THEME
@@ -25,6 +26,7 @@ import { myTheme } from "../utils/myThemes"
 
 import Header from "./header"
 import Footer from "./footer"
+import NavButtons from "./navButtons"
 import ContactForm from "../contactForm"
 
 import "./global.css"
@@ -44,13 +46,14 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     minHeight: "calc(100vh - 67px) ",
     background: `linear-gradient(to bottom, ${grey[100]} 0%, ${
-      yellow[200]
+      grey[300]
     } 100%)`,
     paddingBottom: theme.spacing(15),
   },
   toolbar: theme.mixins.toolbar,
   appBar: {
     boxShadow: theme.shadows[1],
+    padding: theme.spacing(1),
   },
   content: {
     flexGrow: 1,
@@ -75,14 +78,6 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     backgroundColor: grey[200],
   },
-  // navItem: {
-  //   // color: grey[700],
-  //   // textDecoration: "none",
-  //   "&:hover": {
-  //     backgroundColor: grey[300],
-  //     // textDecoration: "underline",
-  //   },
-  // },
 }))
 
 export const ThemeContext = createContext()
@@ -122,17 +117,17 @@ const Layout = ({ children, location }) => {
         >
           <MuiThemeProvider theme={theme}>
             <CssBaseline />
-            {location && location.pathname !== "/" && (
-              <AppBar position="fixed" className={classes.appBar}>
-                <Header
-                  siteTitle={data.site.siteMetadata.title}
-                  location={location}
-                  theme={theme}
-                  handleDrawerOpen={handleDrawerOpen}
-                  handleDrawerClose={handleDrawerClose}
-                />
-              </AppBar>
-            )}
+            {/* {location && location.pathname !== "/" && ( */}
+            <AppBar position="fixed" className={classes.appBar}>
+              <Header
+                siteTitle={data.site.siteMetadata.title}
+                location={location}
+                theme={theme}
+                handleDrawerOpen={handleDrawerOpen}
+                handleDrawerClose={handleDrawerClose}
+              />
+            </AppBar>
+            {/* )} */}
 
             <div className={classes.root}>
               <Grow in={true} timeout={800}>
@@ -153,8 +148,9 @@ const Layout = ({ children, location }) => {
                         <ChevronLeftIcon />
                       </IconButton>
                     </div>
+
                     <Divider />
-                    <List component="nav">
+                    <List component="nav" style={{ float: "right" }}>
                       <Link to="/oldSites">
                         <ListItem button divider onClick={handleDrawerClose}>
                           <ListItemText>Old Sites</ListItemText>
@@ -180,8 +176,11 @@ const Layout = ({ children, location }) => {
                       </Link>
                     </List>
                   </Drawer>
+
                   <div className={classes.toolbar} />
                   {children}
+
+                  <NavButtons />
 
                   <Container
                     component="main"
@@ -194,7 +193,7 @@ const Layout = ({ children, location }) => {
                     />
 
                     <Typography variant="h5" align="center" gutterBottom>
-                      Contact Me
+                      Contact Mackenzie
                     </Typography>
                     <ContactForm />
                   </Container>

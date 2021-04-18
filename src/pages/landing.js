@@ -1,320 +1,133 @@
+/* eslint-disable */
 import React, { useContext } from "react"
-import { Link } from "gatsby"
-import Plx from "react-plx"
-import clsx from "clsx"
-import Icon from "@mdi/react"
-import { mdiArrowRightCircleOutline } from "@mdi/js"
-
+import PropTypes from "prop-types"
+// import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import {
   Button,
   Container,
   Divider,
   Grid,
   Grow,
-  Hidden,
   makeStyles,
   Typography,
 } from "@material-ui/core"
-
-import SEO from "../components/seo"
-import FixSvg from "../components/svg/fixSvg"
-import OldSvg from "../components/svg/oldSvg"
-import Mobile2Svg from "../components/svg/mobile2Svg"
-import DataTrendsSvg from "../components/svg/dataTrendsSvg"
-import NotFoundSvg from "../components/svg/notFoundSvg"
-import BoringSvg from "../components/svg/boringSvg"
-import UserFriendlySvg from "../components/svg/userFriendlySvg"
-
 import { ThemeContext } from "../components/layouts/layout"
 
+import MackLanding from "../components/imagePages/mackLanding"
+import MackWork from "../components/imagePages/mackWork"
+import SEO from "../components/seo"
+import OldSvg from "../components/svg/oldSvg"
+import Mobile2Svg from "../components/svg/mobile2Svg"
+
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
   main: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(2),
-  },
-  img: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
-    width: "80%",
-  },
-  title: {
     marginTop: theme.spacing(4),
-    fontWeight: 500,
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "3rem",
-    },
+  },
+  paragraph: {
+    ...theme.typography.body1,
   },
   divider: {
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
     padding: theme.spacing(0.5),
     backgroundColor: theme.palette.primary.main,
   },
-  lessToolbar: {
-    marginTop: -56,
+  headingTitle: {
+    backgroundColor: theme.palette.secondary.main,
+    color: "white",
+    // color: theme.palette.primary.dark,
+    padding: theme.spacing(1),
   },
-  button: {
-    margin: theme.spacing(1),
-  },
+  // root: {
+  //   backgroundColor: theme.palette.secondary.main,
+  //   // padding: theme.spacing(1),
+  // },
+  // button: {
+  //   color: "white",
+  //   fontWeight: 400,
+  //   // fontSize: ".95rem",
+  //   margin: theme.spacing(1),
+  //   border: "solid 1px white",
+  //   textTransform: "capitalize",
+  // },
 }))
 
-const animateScaleOld = [
-  {
-    start: "self",
-    end: "30%",
-    properties: [
-      {
-        startValue: 0.5,
-        endValue: 1,
-        property: "scale",
-      },
-    ],
-  },
-  {
-    start: "self",
-    end: "30%",
-    properties: [
-      {
-        startValue: 0.5,
-        endValue: 1,
-        property: "opacity",
-      },
-    ],
-  },
-]
-
-const animateScaleBroken = [
-  {
-    start: "self",
-    end: "60%",
-    properties: [
-      {
-        startValue: 0.5,
-        endValue: 1,
-        property: "scale",
-      },
-    ],
-  },
-  {
-    start: "self",
-    end: "60%",
-    properties: [
-      {
-        startValue: 0.5,
-        endValue: 1,
-        property: "opacity",
-      },
-    ],
-  },
-]
-
-const animateScaleBoring = [
-  {
-    start: "self",
-    end: "90%",
-    properties: [
-      {
-        startValue: 0.5,
-        endValue: 1,
-        property: "scale",
-      },
-    ],
-  },
-  {
-    start: "self",
-    end: "90%",
-    properties: [
-      {
-        startValue: 0.5,
-        endValue: 1,
-        property: "opacity",
-      },
-    ],
-  },
-]
-
-const Landing = props => {
+const Landing = () => {
   const themeInfo = useContext(ThemeContext)
   const theme = themeInfo.globalTheme
   const classes = useStyles()
-
-  const directionArrow = (
-    <>
-      <Hidden xsDown>
-        <Icon
-          path={mdiArrowRightCircleOutline}
-          title="becomes"
-          size={4}
-          color={theme.palette.secondary.main}
-          className="animate-flicker"
-        />
-      </Hidden>
-      <Hidden smUp>
-        <Icon
-          path={mdiArrowRightCircleOutline}
-          title="becomes"
-          size={4}
-          color={theme.palette.secondary.main}
-          className="animate-flicker"
-          rotate={90}
-        />
-      </Hidden>
-    </>
-  )
-
   return (
     <>
+      <SEO title="Landing" />
       <Grow in={true} timeout={800}>
-        <Container component="main" className={classes.main} maxWidth="md">
-          <SEO title="Home" />
-          <center className={classes.lessToolbar}>
-            <Grow in={true} timeout={1000}>
-              <FixSvg theme={theme} />
-            </Grow>
-          </center>
-
-          <Grow in={true} timeout={3000}>
-            <Typography
-              variant="h2"
-              align="center"
-              className={clsx(classes.title, "stencil")}
-              gutterBottom
-              color="secondary"
-            >
-              I Fix Websites!
-            </Typography>
-          </Grow>
-
-          <Divider className={classes.divider} />
-
-          <Plx className="outOfDate" parallaxData={animateScaleOld}>
+        <>
+          <Container component="main" className={classes.main} maxWidth="md">
+            <div style={{ maxWidth: `100%`, marginBottom: `1.45rem` }}>
+              <MackLanding />
+            </div>
             <Grid container justify="center" alignItems="center" spacing={4}>
-              <Grid item xs={8} sm={4}>
-                <Typography variant="h5" align="center" gutterBottom>
-                  Old Sites
+              <Grid item xs={12}>
+                <Typography variant="h5" className={classes.headingTitle}>
+                  <b>Mackenzie Kyle</b>
                 </Typography>
-                <center>
-                  <OldSvg theme={theme} />
-                </center>
-              </Grid>
-
-              <Grid item align="center" xs={12} sm={2}>
-                {directionArrow}
-              </Grid>
-
-              <Grid item xs={12} sm={6}>
-                <Typography variant="h5" align="center" gutterBottom>
-                  Mobile Friendly
+                <Typography variant="body1">
+                  … a man who has been attempting to puzzle out the secrets of
+                  human existence for his entire life. Some progress may have
+                  been made, and some of it has been written down. Other bits
+                  come out in front of crowds, sometimes at random times and
+                  sometimes in front of groups that intended to be there to hear
+                  about it.
+                  <br />
+                  <br />
+                  His first published book, Making It Happen, detailed the
+                  trials and tribulations of practical project management. The
+                  book was written as a novel, and despite (or perhaps because
+                  of) the subject matter, it went on to sell more than 45,000
+                  copies in Canada, the US, and around the world. A training
+                  program based on these principles now has more than 15,000
+                  graduates worldwide.
+                  <br />
+                  <br />
+                  His second book, The Performance Principle continues the story
+                  and provides perspective on what motivates people and how to
+                  work with that.
+                  <br />
+                  <br />
+                  Mackenzie speaks (learn more) on a variety of topics related
+                  to employee motivation, team work, and project management.
                 </Typography>
-                <Mobile2Svg theme={theme} />
-                <center>
-                  <Link to="/oldSites">
-                    <Button
-                      variant="outlined"
-                      color="secondary"
-                      className={classes.button}
-                    >
-                      Learn More ...
-                    </Button>
-                  </Link>
-                </center>
               </Grid>
             </Grid>
-          </Plx>
 
-          <Divider className={classes.divider} />
+            <Divider className={classes.divider} />
 
-          <Plx className="broken" parallaxData={animateScaleBroken}>
             <Grid container justify="center" alignItems="center" spacing={4}>
-              <Grid item xs={8} sm={4}>
-                <div style={{ cursor: "pointer" }}>
-                  <Typography variant="h5" align="center" gutterBottom>
-                    Broken Sites
-                  </Typography>
-                  <center>
-                    <Grow in={true} timeout={2000}>
-                      <NotFoundSvg theme={theme} />
-                    </Grow>
-                  </center>
-                </div>
+              <Grid item xs={12} sm={7}>
+                <MackWork />
               </Grid>
-
-              <Grid item align="center" xs={12} sm={2}>
-                {directionArrow}
-              </Grid>
-
-              <Grid item xs={12} sm={6}>
-                <Typography variant="h5" align="center" gutterBottom>
-                  SEO Friendly
+              <Grid item xs={12} sm={5}>
+                <Typography variant="body1">
+                  His day job is as British Columbia Managing Partner at MNP, a
+                  national Consulting and Accounting firm. Mackenzie has more
+                  than 25 years experience in operations improvement and
+                  restructuring, and has provided specific assistance in
+                  everything from strategic planning to performance management
+                  to managing small projects. He has hands-on experience in a
+                  wide variety of industries, and his services are frequently of
+                  use in situations requiring the application of more than a
+                  single specialty.
+                  <br />
+                  <br />
+                  He has worked in a variety of industries including
+                  manufacturing, transportation, telecommunications, as well as
+                  the public sector and internationally in the United States,
+                  Australia, New Zealand and Asia.
                 </Typography>
-                <Grow in={true} timeout={2000}>
-                  <DataTrendsSvg theme={theme} />
-                </Grow>
-
-                <center>
-                  <Link to="/brokenSites">
-                    <Button
-                      variant="outlined"
-                      color="secondary"
-                      // fullWidth
-                      className={classes.button}
-                    >
-                      Learn More ...
-                    </Button>
-                  </Link>
-                </center>
               </Grid>
             </Grid>
-          </Plx>
-
-          <Divider className={classes.divider} />
-
-          <Plx className="boring" parallaxData={animateScaleBoring}>
-            <Grid container justify="center" alignItems="center" spacing={4}>
-              <Grid item xs={8} sm={4}>
-                <div style={{ cursor: "pointer" }}>
-                  <Typography variant="h5" align="center" gutterBottom>
-                    Boring Sites
-                  </Typography>
-                  <center>
-                    <Grow in={true} timeout={2000}>
-                      <BoringSvg theme={theme} />
-                    </Grow>
-                  </center>
-                </div>
-              </Grid>
-
-              <Grid item align="center" xs={12} sm={2}>
-                {directionArrow}
-              </Grid>
-
-              <Grid item xs={12} sm={6}>
-                <Typography variant="h5" align="center" gutterBottom>
-                  User Friendly
-                </Typography>
-                <Grow in={true} timeout={2000}>
-                  <UserFriendlySvg theme={theme} />
-                </Grow>
-
-                <center>
-                  <Link to="/boringSites">
-                    <Button
-                      variant="outlined"
-                      color="secondary"
-                      // fullWidth
-                      className={classes.button}
-                    >
-                      Learn More ...
-                    </Button>
-                  </Link>
-                </center>
-              </Grid>
-            </Grid>
-          </Plx>
-        </Container>
+          </Container>
+        </>
       </Grow>
     </>
   )
